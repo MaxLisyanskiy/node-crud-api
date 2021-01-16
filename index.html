@@ -11,6 +11,16 @@
     
     <div id="app">
         <h1>{{title}}</h1>
+
+        <!--new note-->
+        <div class="new-note">
+            <input v-model="note.title" type="text">
+            <textarea v-model="note.descr"></textarea>
+            <button @click="addNote">New note!</button>
+        </div>
+
+
+        <!--notes-->
         <div class="notes">
             <div class="note" v-for="(note, index) in notes" :key="index" style="border: 1px solid grey; width: 20%;">
                 <div class="note-header">
@@ -29,6 +39,10 @@
             el: '#app',
             data: {
                 title: 'Notes App',
+                note: {
+                    title: '',
+                    descr: ''
+                },
                 notes: [
                     {
                         title: "first note",
@@ -46,7 +60,17 @@
                         date: new Date(Date.now()).toLocaleString()
                     }
                 ]
+            },
+            methods: {
+                addNote() {
+                    let {title, descr} = this.note;
 
+                    this.notes.push({
+                        title,
+                        descr,
+                        date: new Date(Date.now()).toLocaleString()
+                    })
+                }
             }
         })
 
