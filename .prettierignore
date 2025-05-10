@@ -1,0 +1,9 @@
+node_modules/
+dist/
+docs/
+Readme.md
+.env
+yarn.lock
+package-lock.json
+tsconfig.json
+.prettierrc
