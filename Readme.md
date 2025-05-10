@@ -2,6 +2,21 @@
 
 Task: https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/crud-api/assignment.md
 
+## Project structure
+```
+node-crud-api/
+├── src/
+│   ├── index.ts
+│   └── user/
+│       ├── user.controller.ts
+│       ├── user.routes.ts       
+│       ├── user.types.ts
+│       └── user.utils.ts
+├── .env
+├── package.json
+└── tsconfig.json
+```
+
 ## Endpoints
 
 #### [GET] Get all users
@@ -19,24 +34,21 @@ Task: https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/c
 
 ```json
 {
-  "name": "",
-  "phone": "",
-  "email": ""
+  "username": string,
+  "age": number,
+  "hobbies": string[]
 }
 ```
 
 ### [PUT] Update user
 
 - URL: `/api/users/{userId}`
-- params:
-  /users/1
 - Body:
-
 ```json
 {
-  "name": "",
-  "phone": "",
-  "email": ""
+  "username": string,
+  "age": number,
+  "hobbies": string[]
 }
 ```
 
