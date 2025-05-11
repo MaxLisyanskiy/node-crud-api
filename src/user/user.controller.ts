@@ -41,8 +41,10 @@ export class UserController {
           res.end(JSON.stringify({ message: 'Missing required fields' }))
           return
         }
+
         const newUser: User = { id: uuidv4(), username, age, hobbies }
         this.users.push(newUser)
+
         res.statusCode = STATUS_CODES.CREATED
         res.end(JSON.stringify(newUser))
       } catch (error) {
